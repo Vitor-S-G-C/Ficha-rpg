@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha do Personagem</title>
+    <link rel="stylesheet" href="estilo.css">
+    
+</head>
+
+<body>
+    <div class="fundo">
+    
+    <fieldset>
+        <legend>Ficha</legend>
+    
+    
+    <div id="conteudo">
+        <!-- Este div será preenchido com os dados do personagem -->
+    </div>
+    
+    <div id="opcoes">
+        <button id="baixar-pdf">Baixar PDF</button>
+        <a href="form.html">Editar Novamente</a>
+    </div>
+</div>
+</fieldset>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script>
+        // Função para obter parâmetros da URL
+        function obterParametroUrl(nome) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nome);
+        }
+        
+        // Função para preencher a ficha com os dados da URL
+        function preencherFicha() {
+            const nome = obterParametroUrl('nome');
+            const sexo = obterParametroUrl('sexo');
+            const raca = obterParametroUrl('raca');
+            const classe = obterParametroUrl('classe');
+            const forca = obterParametroUrl('forca');
+            const destreza = obterParametroUrl('destreza');
+            const intelecto = obterParametroUrl('intelecto');
+            const carisma = obterParametroUrl('carisma');
+            const fe = obterParametroUrl('fe');
+            const vigor = obterParametroUrl('vigor');
+            const vida = vigor * 10;
+            const profissao = obterParametroUrl('profissao');
+            const skill = obterParametroUrl('skill');
+            const truques = obterParametroUrl('truques');
+            
+            const conteudoDiv = document.getElementById('conteudo');
+            conteudoDiv.innerHTML = `
+                <p><strong>Nome:</strong> ${nome}</p>
+                <p><strong>Sexo:</strong> ${sexo === 'M' ? 'Masculino' : 'Feminino'}</p>
+                <p><strong>Raça:</strong> ${raca}</p>
+                <p><strong>Classe:</strong> ${classe}</p>
+                <p><strong>Força:</strong> ${forca}</p>
+                <p><strong>Destreza:</strong> ${destreza}</p>
+                <p><strong>Intelecto:</strong> ${intelecto}</p>
+                <p><strong>Carisma:</strong> ${carisma}</p>
+                <p><strong>Fé:</strong> ${fe}</p>
+                <p><strong>Vigor:</strong> ${vigor}</p>
+                <p><strong>Vida:</strong> ${vida}</p>
+                <p><strong>Profissão:</strong> ${profissao}</p>
+                <p><strong>Skill:</strong> ${skill}</p>
+                <p><strong>Truques:</strong> ${truques}</p>
+            `;
+            
+            // Configura o evento para baixar o PDF
+            const baixarPdfBotao = document.getElementById('baixar-pdf');
+            baixarPdfBotao.addEventListener('click', function() {
+                // Cria um novo documento PDF
+                const doc = new jspdf.jsPDF();
+                
+                // Define o conteúdo do PDF
+                let y = 20;
+                doc.text(`Nome: ${nome}`, 10, y);
+                y += 10;
+                doc.text(`Sexo: ${sexo === 'M' ? 'Masculino' : 'Feminino'}`, 10, y);
+                y += 10;
+                doc.text(`Raça: ${raca}`, 10, y);
+                y += 10;
+                doc.text(`Classe: ${classe}`, 10, y);
+                y += 10;
+                doc.text(`Força: ${forca}`, 10, y);
+                y += 10;
+                doc.text(`Destreza: ${destreza}`, 10, y);
+                y += 10;
+                doc.text(`Intelecto: ${intelecto}`, 10, y);
+                y += 10;
+                doc.text(`Carisma: ${carisma}`, 10, y);
+                y += 10;
+                doc.text(`Fé: ${fe}`, 10, y);
+                y += 10;
+                doc.text(`Vigor: ${vigor}`, 10, y);
+                y += 10;
+                doc.text(`Vida: ${vida}`, 10, y);
+                y += 10;
+                doc.text(`Profissão: ${profissao}`, 10, y);
+                y += 10;
+                doc.text(`Skill: ${skill}`, 10, y);
+                y += 10;
+                doc.text(`Truques: ${truques}`, 10, y);
+                
+                // Salva o PDF com o nome do personagem
+                doc.save(`${nome}_character_sheet.pdf`);
+            });
+        }
+        
+        // Chama a função ao carregar a página
+        preencherFicha();
+    </script>
+</body>
+
+</html>

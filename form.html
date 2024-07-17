@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div>
+            <img id="imagem"
+                src="png-transparent-dungeons-dragons-symbol-dungeons-dragons-roleplaying-game-dice-d20-system-dungeon-crawl-tabletop-roleplaying-game-dungeon-master-removebg-preview.png">
+            </img>
+        </div>
+    </nav>
+    <div class="fundo">
+        <form action="ficha.html" method="get" id="rpg">
+            <fieldset>
+                <legend>Perfil</legend>
+                <label for="nome">Nome: <input type="text" id="nome" name="nome" required></label>
+                <label for="sexo">Sexo:
+                    <select name="sexo" id="sexo" required>
+                        <option value="">Selecione uma opção</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                </label>
+                <label for="raca">Raça: <input type="text" id="raca" name="raca" required></label>
+                <label for="classe">Classe: <input type="text" id="classe" name="classe" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>Atributos</legend>
+                <label for="forca">Força: <input type="number" id="forca" name="forca" min="1" required></label>
+                <label for="destreza">Destreza: <input type="number" id="destreza" name="destreza" min="1"
+                        required></label>
+                <label for="intelecto">Intelecto: <input type="number" id="intelecto" name="intelecto" min="1"
+                        required></label>
+                <label for="carisma">Carisma: <input type="number" id="carisma" name="carisma" min="1"
+                        required></label>
+                <label for="fe">Fé: <input type="number" id="fe" name="fe" min="1" required></label>
+                <label for="vigor">Vigor: <input type="number" id="vigor" name="vigor" min="1" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>Perícias</legend>
+                <label for="acrobacia"><input id="acrobacia" value="Acrobacia" name="pericia" class="input-radio" type="radio"
+                        checked>Acrobacia</label>
+                <label for="arcanismo"><input id="arcanismo" value="Arcanismo" name="pericia" class="input-radio" type="radio">Arcanismo</label>
+                <label for="atletismo"><input id="atletismo" value="Atletismo" name="pericia" class="input-radio" type="radio">Atletismo</label>
+                <label for="blefar"><input id="blefar" value="Blefar" name="pericia" class="input-radio" type="radio">Blefar</label>
+                <label for="furtividade"><input id="furtividade" value="Furtividade" name="pericia" class="input-radio" type="radio">Furtividade</label>
+                <label for="historia"><input id="historia" value="História" name="pericia" class="input-radio" type="radio">História</label>
+                <label for="intimidacao"><input id="intimidacao" value="Intimidação" name="pericia" class="input-radio" type="radio">Intimidação</label>
+                <label for="intuicao"><input id="intuicao" value="Intuição" name="pericia" class="input-radio" type="radio">Intuição</label>
+                <label for="investigacao"><input id="investigacao" value="Investigação" name="pericia" class="input-radio" type="radio">Investigação</label>
+                <label for="lidar-com-animais"><input id="lidar-com-animais" value="Lidar com Animais" name="pericia" class="input-radio" type="radio">Lidar com Animais</label>
+                <label for="medicina"><input id="medicina" value="Medicina" name="pericia" class="input-radio" type="radio">Medicina</label>
+                <label for="natureza"><input id="natureza" value="Natureza" name="pericia" class="input-radio" type="radio">Natureza</label>
+                <label for="percepcao"><input id="percepcao" value="Percepção" name="pericia" class="input-radio" type="radio">Percepção</label>
+                <label for="persuasao"><input id="persuasao" value="Persuasão" name="pericia" class="input-radio" type="radio">Persuasão</label>
+                <label for="prestidigitacao"><input id="prestidigitacao" value="Prestidigitação" name="pericia" class="input-radio" type="radio">Prestidigitação</label>
+                <label for="religiao"><input id="religiao" value="Religião" name="pericia" class="input-radio" type="radio">Religião</label>
+                <label for="sobrevivencia"><input id="sobrevivencia" value="Sobrevivência" name="pericia" class="input-radio" type="radio">Sobrevivência</label>
+            </fieldset>
+            <fieldset>
+                <legend>Profissão</legend>
+                <label for="profissao">Profissão: <input type="text" id="profissao" name="profissao" required></label>
+            </fieldset>
+            <fieldset>
+                <legend>Skill</legend>
+                <textarea id="skill" name="skill" class="textarea" required></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Truques</legend>
+                <textarea id="truques" name="truques" class="textarea" required></textarea>
+            </fieldset>
+            <button type="submit">Finalizar</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
