@@ -14,3 +14,9 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+button{
+    border-radius: 15px;
+    
+}
+button::-webkit-inner-spin-button,
+button::-webkit-outer-spin-button {-webkit-appearance:none ;}
