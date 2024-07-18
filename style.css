@@ -65,31 +65,16 @@ label {
     
 
 }
-@media (max-width: 500px) {
-    .container {
-        width: 100%;
-        max-width: none;
+@media screen and (max-width: 500px) {
+    *{
+        padding: 0;
+        margin: 0;
     }
-}
 
-@media (max-width: 480px) {
     .fundo {
         background-color: rgb(3, 38, 63);
-        width: 100vh;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .container {
         width: 100%;
-        max-width: none;
+        margin: 0 auto;
     }
-    button {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    input[type="number"] {
-        padding: 8px;
-        font-size: 14px;
-    }
+    
+}
