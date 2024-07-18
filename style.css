@@ -65,7 +65,7 @@ label {
     
 
 }
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .container {
         width: 100%;
         max-width: none;
@@ -73,6 +73,17 @@ label {
 }
 
 @media (max-width: 480px) {
+    .fundo {
+        background-color: rgb(3, 38, 63);
+        width: 100vh;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+    }
     button {
         padding: 10px;
         font-size: 14px;
@@ -82,8 +93,3 @@ label {
         padding: 8px;
         font-size: 14px;
     }
-
-    #resultado100, #resultado20, #resultado10, #resultado8, #resultado6, #resultado4 {
-        font-size: 20px;
-    }
-}
